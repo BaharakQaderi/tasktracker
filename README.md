@@ -4,6 +4,7 @@ A modern task management API built with FastAPI, PostgreSQL, and Docker. This ap
 
 ## 🚀 Features
 
+### 🎯 **Core Functionality**
 - ✅ **Create new tasks** with title validation
 - 📋 **List all tasks** with pagination and filtering
 - ✅ **Mark tasks as completed**
@@ -11,26 +12,70 @@ A modern task management API built with FastAPI, PostgreSQL, and Docker. This ap
 - 🗑️ **Delete tasks**
 - 📊 **Get task statistics** (total, completed, pending)
 - 🔍 **Filter tasks** by completion status
-- 🏥 **Health check endpoints**
-- 📚 **Automatic API documentation** (Swagger UI)
+
+### 🌐 **Web Interface**
+- 🖥️ **Modern React frontend** with responsive design
+- 📱 **Mobile-friendly** interface
+- ⚡ **Real-time updates** without page refresh
+- � **Clean, intuitive UI** with smooth animations
+
+### 🔧 **Developer Features**
+- �🏥 **Health check endpoints**
+- 📚 **Automatic API documentation** (Swagger UI & ReDoc)
+- 🐳 **Docker containerization** for easy deployment
+- 🧪 **Comprehensive testing** (unit & integration)
+- 📝 **Type hints** and validation throughout
 
 ## 🏗️ Architecture
 
-TaskTracker follows a **3-tier architecture**:
+TaskTracker follows a **modern full-stack architecture**:
 
-1. **Presentation Layer**: FastAPI REST endpoints
-2. **Business Logic Layer**: CRUD operations and validation
-3. **Data Layer**: PostgreSQL database with SQLAlchemy ORM
+1. **Frontend**: React 18 with modern hooks and responsive design
+2. **API Layer**: FastAPI REST endpoints with automatic documentation
+3. **Business Logic**: CRUD operations with validation and error handling
+4. **Data Layer**: PostgreSQL database with SQLAlchemy ORM
+5. **Deployment**: Docker Compose with Nginx proxy
 
-![Architecture Diagram](architecture_diagram.svg)
+![Architecture Diagram](docs/architecture_diagram.svg)
+
+### 📁 Project Structure
+
+```
+tasktracker/
+├── 📚 README.md              # Project documentation
+├── 🤝 CONTRIBUTING.md        # Contributor guidelines  
+├── 📄 LICENSE               # MIT license
+├── 🐳 docker-compose.yml    # Multi-service orchestration
+├── 📋 requirements.txt      # Python dependencies
+├── 🚫 .gitignore           # Git ignore rules
+├── 📁 app/                 # FastAPI backend
+│   ├── 🚀 main.py          # FastAPI application
+│   ├── 🗃️ models.py        # SQLAlchemy models
+│   ├── 📝 schemas.py       # Pydantic schemas
+│   ├── 🔧 crud.py          # Database operations
+│   └── 🗄️ database.py     # Database configuration
+├── 📁 frontend/            # React frontend
+│   ├── 🎨 src/             # React source code
+│   ├── 📦 package.json     # Node.js dependencies
+│   └── 🐳 Dockerfile       # Frontend container
+├── 📁 tests/               # Test suite
+│   ├── 🧪 unit/            # Unit tests
+│   └── 🔗 integration/     # Integration tests
+└── 📁 docs/               # Documentation
+    ├── 🏛️ ARCHITECTURE.md  # Architecture details
+    ├── 📐 BEST_PRACTICES.md # Development guidelines
+    └── 📊 SEQUENCE_DIAGRAMS.md # API flow diagrams
+```
 
 ## 🛠️ Technology Stack
 
 - **Backend**: FastAPI + Uvicorn
+- **Frontend**: React 18 + Modern Hooks
 - **Database**: PostgreSQL + SQLAlchemy
 - **Validation**: Pydantic
 - **Containerization**: Docker + Docker Compose
-- **Language**: Python 3.11
+- **Proxy**: Nginx (for frontend)
+- **Language**: Python 3.11, JavaScript (ES6+)
 
 ## 🚀 Quick Start
 
@@ -42,7 +87,7 @@ TaskTracker follows a **3-tier architecture**:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/tasktracker.git
+git clone https://github.com/BaharakQaderi/tasktracker.git
 cd tasktracker
 ```
 
@@ -69,10 +114,22 @@ docker-compose ps
 
 ### 4. Access the Application
 
+- **Frontend Web UI**: http://localhost:3000
 - **API Documentation (Swagger UI)**: http://localhost:8000/docs
 - **Alternative Documentation (ReDoc)**: http://localhost:8000/redoc
 - **Health Check**: http://localhost:8000/health
 - **API Base URL**: http://localhost:8000
+
+## 🖥️ Frontend Features
+
+The React frontend provides a modern, responsive user interface with:
+
+- 📱 **Responsive Design** - Works on desktop, tablet, and mobile
+- ⚡ **Real-time Updates** - Instant task status changes
+- 🎨 **Modern UI** - Clean, intuitive interface
+- 📊 **Task Statistics** - Visual dashboard with task counts
+- 🔍 **Filtering** - Filter tasks by completion status
+- ✨ **Smooth Animations** - Enhanced user experience
 
 ## 📖 API Endpoints
 
@@ -158,18 +215,19 @@ docker-compose up -d
 
 ```bash
 # View application logs
-docker-compose logs app
+docker-compose logs backend
 
 # Follow logs in real-time
-docker-compose logs -f app
+docker-compose logs -f backend
 
 # View specific service logs
+docker-compose logs frontend
 docker-compose logs db
 ```
 
 ## 🧪 Testing
 
-### Run Tests (Coming Soon)
+### Run Tests
 
 ```bash
 # Run all tests
@@ -179,7 +237,10 @@ pytest
 pytest --cov=app
 
 # Run specific test file
-pytest tests/test_crud.py
+pytest tests/unit/test_crud.py
+
+# Run integration tests
+pytest tests/integration/test_api.py
 ```
 
 ### Manual Testing with Swagger UI
@@ -265,16 +326,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or need help:
 
-1. Check the [documentation](http://localhost:8000/docs)
-2. Review the [architecture guide](ARCHITECTURE.md)
-3. Read the [best practices](BEST_PRACTICES.md)
+1. Check the [API documentation](http://localhost:8000/docs)
+2. Review the [architecture guide](docs/ARCHITECTURE.md)
+3. Read the [best practices](docs/BEST_PRACTICES.md)
 4. Open an issue in the repository
 
 ## 🔄 Changelog
 
-### v1.0.0 (2024-01-15)
+### v1.0.0 (2025-07-09)
 - Initial release
-- Core CRUD operations
-- Docker containerization
-- API documentation
-- Health checks
+- Core CRUD operations for tasks
+- React frontend with modern UI
+- Docker containerization with multi-service setup
+- Comprehensive API documentation
+- Health checks and monitoring
+- Complete test suite
